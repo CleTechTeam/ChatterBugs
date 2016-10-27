@@ -3,6 +3,8 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace ChatterBugs.Models
 {
@@ -15,6 +17,15 @@ namespace ChatterBugs.Models
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Add custom user claims here
             return userIdentity;
+        }
+
+        public ICollection<Follower> Followers { get; set; }
+        public ICollection<Follower> Following { get; set; }
+
+        public enum EFollowerType
+        {
+            Follower = 1,
+            Following
         }
     }
 
@@ -29,5 +40,8 @@ namespace ChatterBugs.Models
         {
             return new ApplicationDbContext();
         }
+
     }
+
+    
 }

@@ -1,4 +1,4 @@
-namespace ChatterBugs.Migrations
+ namespace ChatterBugs.Migrations
 {
     using System;
     using System.Data.Entity;

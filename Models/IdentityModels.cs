@@ -19,14 +19,16 @@ namespace ChatterBugs.Models
             return userIdentity;
         }
 
-        public ICollection<Follower> Followers { get; set; }
-        public ICollection<Follower> Following { get; set; }
+        public ICollection<ApplicationUser> Followers { get; set; }
+        public ICollection<ApplicationUser> Following { get; set; }
 
         public enum EFollowerType
         {
             Follower = 1,
             Following
         }
+
+        public Post UserPost { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -35,12 +37,19 @@ namespace ChatterBugs.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+        
 
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
+        
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<ApplicationUser>().HasMany(m => m.Followers).WithMany(p => p.Following).Map(w => w.ToTable("ApplicationUser_Follow").MapLeftKey("ApplicationUserID").MapRightKey("FollowerID"));
+            base.OnModelCreating(modelBuilder);
+        }
     }
 
     

@@ -82,3 +82,4 @@ c:\users\wecancodeit\documents\visual studio 2015\Projects\ChatterBugs\ChatterBu
 c:\users\wecancodeit\documents\visual studio 2015\Projects\ChatterBugs\ChatterBugs\obj\Debug\ChatterBugs.pdb
 c:\users\wecancodeit\documents\visual studio 2015\Projects\ChatterBugs\ChatterBugs\obj\Debug\ChatterBugs.Migrations.Follower.resources
 c:\users\wecancodeit\documents\visual studio 2015\Projects\ChatterBugs\ChatterBugs\obj\Debug\ChatterBugs.csproj.GenerateResource.Cache
+C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\ChatterBugs\ChatterBugs\obj\Debug\ChatterBugs.Migrations.Postadded.resources
